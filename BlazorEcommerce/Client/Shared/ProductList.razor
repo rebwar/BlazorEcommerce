@@ -5,7 +5,7 @@
         <li class="media my-3">
             <div class="media-img-wrapper m-2">
                 <a href="#">
-                    <img class="medi-img" src="@product.ImageUrl" alt="@product.Title" />
+                    <img class="media-img" src="@product.ImageUrl" alt="@product.Title" />
                 </a>
             </div>
             <div class="media-body">
@@ -28,6 +28,6 @@
     private List<Product> Products = new List<Product>();
     protected async override Task OnInitializedAsync()
     {
-       Products=await Http.GetFromJsonAsync<List<Product>>("api/product");
+       Products=(await Http.GetFromJsonAsync<ServiceResponce<List<Product>>>("api/product")).Data;
     }
 }

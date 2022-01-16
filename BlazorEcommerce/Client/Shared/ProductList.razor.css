@@ -16,9 +16,7 @@
     transform: scale(1.1);
 }
 
-.price{
-    color:green;
-}
+
 
 @media(max-width:1023.98px){
     .media{

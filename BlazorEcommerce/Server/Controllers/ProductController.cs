@@ -15,12 +15,12 @@ namespace BlazorEcommerce.Server.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly DataContext _context;
+
         private readonly IProductService _productservice;
 
-        public ProductController(DataContext context,IProductService productService)
+        public ProductController(IProductService productService)
         {
-            _context = context;
+
             _productservice = productService;
         }
 
@@ -30,5 +30,14 @@ namespace BlazorEcommerce.Server.Controllers
             var response = await _productservice.GetProducts();
             return Ok(response);
         }
+
+        [HttpGet("{productid}")]
+        public async Task<ActionResult<ServiceResponce<Product>>> GetProductById(int productId)
+        {
+            var response = await _productservice.GetProductById(productId);
+            return Ok(response);
+        }
+
+
     }
 }

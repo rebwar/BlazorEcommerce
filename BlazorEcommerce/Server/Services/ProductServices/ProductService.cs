@@ -16,13 +16,32 @@ namespace BlazorEcommerce.Server.Services.ProductServices
         {
             _context = context;
         }
+
+        public async Task<ServiceResponce<Product>> GetProductById(int productId)
+        {
+            var response = new ServiceResponce<Product>();
+            var product = await _context.Products.FindAsync(productId);
+            if (product == null)
+            {
+                response.Success = false;
+                response.Message = "You product does not exist!";
+            }
+            else
+            {
+                response.Data = product;
+
+            }
+            return response;
+
+        }
+
         public async Task<ServiceResponce<List<Product>>> GetProducts()
         {
             var products = await _context.Products.ToListAsync();
             var response = new ServiceResponce<List<Product>>
             {
-                Data=products,
-                Message="Here you go!"
+                Data = products,
+                Message = "Here you go!"
             };
 
             return response;

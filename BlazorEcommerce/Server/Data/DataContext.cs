@@ -26,7 +26,7 @@ namespace BlazorEcommerce.Server.Data
                     },
                     new Product
                     {
-                        ProductId = 5,
+                        ProductId = 2,
                         Title = "A Clergyman's Daughter",
                         Description = "A Clergyman's Daughter is a 1935 novel by English author George Orwell. It tells the story of Dorothy Hare, the clergyman's daughter of the title, whose life is turned upside down when she suffers an attack of amnesia. It is Orwell's most formally experimental novel, featuring a chapter written entirely in dramatic form, but he was never satisfied with it and he left instructions that after his death it was not to be reprinted",
                         ImageUrl = "https://upload.wikimedia.org/wikipedia/en/a/ac/A_Clergyman%27s_Daughter_%281st_US_edition_-_cover_art%29.jpg",

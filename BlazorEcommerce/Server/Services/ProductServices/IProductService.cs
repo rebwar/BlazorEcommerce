@@ -10,6 +10,6 @@ namespace BlazorEcommerce.Server.Services.ProductServices
     {
         Task <ServiceResponce<List<Product>>> GetProducts();
 
-        Task<ServiceResponce<Product>> GetProductById(int productId);
+        Task<ServiceResponce<Product>> GetProductById(int id);
     }
 }

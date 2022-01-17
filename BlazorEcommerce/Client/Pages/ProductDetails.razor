@@ -1,7 +1,6 @@
-﻿@page "/product/{productid:int}"
+﻿@page "/product/{id:int}"
 @inject IProductService productService
 
-<h3>ProductDetails</h3>
 
 @if (product == null)
 {
@@ -25,11 +24,11 @@ else
     private Product product = null;
     private string message;
     [Parameter]
-    public int ProductId { get; set; }
-    protected override async Task OnParametersSetAsync()
+    public int Id { get; set; }
+    protected async override Task OnParametersSetAsync()
     {
         message = "Loading Product...";
-        var result =await productService.GetProductById(ProductId);
+        var result =await productService.GetProductById(Id);
 
         if(!result.Success)
         {
